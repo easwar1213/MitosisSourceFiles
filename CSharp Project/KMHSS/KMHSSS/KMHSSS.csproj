@@ -1,0 +1,1261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C8D27B1-9C78-404F-B0AF-CE6855E910FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KMHSSS</RootNamespace>
+    <AssemblyName>KMHSSS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Global.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Academy_Year_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academy_Year_Master_Frm.Designer.cs">
+      <DependentUpon>Academy_Year_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Academy_Year_Wise_Student_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academy_Year_Wise_Student_Details_Frm.Designer.cs">
+      <DependentUpon>Academy_Year_Wise_Student_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Home_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Home_Frm.Designer.cs">
+      <DependentUpon>Admin_Home_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Number_Wise_Student_Bill_History_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_Number_Wise_Student_Bill_History_Frm.Designer.cs">
+      <DependentUpon>Admission_Number_Wise_Student_Bill_History_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Outstanding_Arrears_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Outstanding_Arrears_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Outstanding_Arrears_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class_Master_Frm.Designer.cs">
+      <DependentUpon>Class_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportASDR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportASDR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSCDR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSCDR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fine_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fine_Master_Frm.Designer.cs">
+      <DependentUpon>Fine_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Group_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Group_Master_Frm.Designer.cs">
+      <DependentUpon>Group_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Deposit_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Deposit_Master_Frm.Designer.cs">
+      <DependentUpon>Hostel_Deposit_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Fees_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Fees_Master_Frm.Designer.cs">
+      <DependentUpon>Hostel_Fees_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Maintance_Fees_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Maintance_Fees_Master_Frm.Designer.cs">
+      <DependentUpon>Hostel_Maintance_Fees_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KMHSS_Admin_Home_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KMHSS_Admin_Home_Frm.Designer.cs">
+      <DependentUpon>KMHSS_Admin_Home_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Account_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Account_Master_Frm.Designer.cs">
+      <DependentUpon>Login_Account_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Frm.Designer.cs">
+      <DependentUpon>Login_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Student_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Student_Master_Frm.Designer.cs">
+      <DependentUpon>Admin_Student_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup_Frm.Designer.cs">
+      <DependentUpon>Backup_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class_Name_List_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class_Name_List_Frm.Designer.cs">
+      <DependentUpon>Class_Name_List_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportAMCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportAMCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportCNLR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCNLR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportDBTR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportDBTR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportDOBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportDOBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportGR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportGR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportHBP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportHBP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportHBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportHBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportHFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportHFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportHSR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportHSR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOHBP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOHBP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOHBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOHBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOHFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOHFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOSBP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOSBP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOSBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOSBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOSFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOSFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOSTFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOSTFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportOVFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportOVFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportPPD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPPD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSBP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSBP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSPDR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSPDR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSTBP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSTBP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSTBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSTBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSTFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSTFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportTCR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportVBP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportVBP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportVBR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportVBR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportVFR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportVFR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Daily_Bill_Turnover_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily_Bill_Turnover_Report_Frm.Designer.cs">
+      <DependentUpon>Daily_Bill_Turnover_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Daily_Overall_Bill_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily_Overall_Bill_Report_Frm.Designer.cs">
+      <DependentUpon>Daily_Overall_Bill_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Group_Master_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Group_Master_Report_Frm.Designer.cs">
+      <DependentUpon>Group_Master_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Fees_Master_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Fees_Master_Report_Frm.Designer.cs">
+      <DependentUpon>Hostel_Fees_Master_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Hostel_Fees_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Hostel_Fees_Details_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Hostel_Fees_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Students_Details_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Students_Details_Report_Frm.Designer.cs">
+      <DependentUpon>Hostel_Students_Details_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintance_Type_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintance_Type_Master_Frm.Designer.cs">
+      <DependentUpon>Maintance_Type_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Month_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Month_Master_Frm.Designer.cs">
+      <DependentUpon>Month_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_Fees_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other_Fees_Master_Frm.Designer.cs">
+      <DependentUpon>Other_Fees_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Stationary_Fees_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Stationary_Fees_Report_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Stationary_Fees_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Student_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Student_Details_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Student_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Particulars_Fees_Paid_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Particulars_Fees_Paid_Details_Frm.Designer.cs">
+      <DependentUpon>Particulars_Fees_Paid_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_Fees_Master_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other_Fees_Master_Report_Frm.Designer.cs">
+      <DependentUpon>Other_Fees_Master_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outsatanding_School_Fees_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outsatanding_School_Fees_Report_Frm.Designer.cs">
+      <DependentUpon>Outsatanding_School_Fees_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Hostel_Fees_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Hostel_Fees_Report_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Hostel_Fees_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Van_Fees_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Van_Fees_Report_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Van_Fees_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Particulars_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Particulars_Master_Frm.Designer.cs">
+      <DependentUpon>Particulars_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Place_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Place_Master_Frm.Designer.cs">
+      <DependentUpon>Place_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Promotion_Eligible_Student_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Promotion_Eligible_Student_Details_Frm.Designer.cs">
+      <DependentUpon>Promotion_Eligible_Student_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Promotion_Not_Eligible_Student_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Promotion_Not_Eligible_Student_Details_Frm.Designer.cs">
+      <DependentUpon>Promotion_Not_Eligible_Student_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Promotion_With_Held_Student_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Promotion_With_Held_Student_Details_Frm.Designer.cs">
+      <DependentUpon>Promotion_With_Held_Student_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Bill_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Bill_Frm.Designer.cs">
+      <DependentUpon>Hostel_Bill_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Bill_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Bill_Report_Frm.Designer.cs">
+      <DependentUpon>Hostel_Bill_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_Hostel_Bill_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other_Hostel_Bill_Frm.Designer.cs">
+      <DependentUpon>Other_Hostel_Bill_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_Hostel_Bill_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other_Hostel_Bill_Report_Frm.Designer.cs">
+      <DependentUpon>Other_Hostel_Bill_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_School_Bill_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other_School_Bill_Frm.Designer.cs">
+      <DependentUpon>Other_School_Bill_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_School_Bill_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other_School_Bill_Report_Frm.Designer.cs">
+      <DependentUpon>Other_School_Bill_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="School_Bill_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="School_Bill_Frm.Designer.cs">
+      <DependentUpon>School_Bill_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="School_Bill_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="School_Bill_Report_Frm.Designer.cs">
+      <DependentUpon>School_Bill_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="School_Fees_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="School_Fees_Master_Frm.Designer.cs">
+      <DependentUpon>School_Fees_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="School_Fees_Master_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="School_Fees_Master_Report_Frm.Designer.cs">
+      <DependentUpon>School_Fees_Master_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_School_Fees_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_School_Fees_Details_Frm.Designer.cs">
+      <DependentUpon>Outstanding_School_Fees_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Section_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Section_Master_Frm.Designer.cs">
+      <DependentUpon>Section_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Home_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Home_Frm.Designer.cs">
+      <DependentUpon>Staff_Home_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Academy_Year_Master_Frm.resx">
+      <DependentUpon>Academy_Year_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Academy_Year_Wise_Student_Details_Frm.resx">
+      <DependentUpon>Academy_Year_Wise_Student_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Home_Frm.resx">
+      <DependentUpon>Admin_Home_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_Number_Wise_Student_Bill_History_Frm.resx">
+      <DependentUpon>Admission_Number_Wise_Student_Bill_History_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Outstanding_Arrears_Details_Frm.resx">
+      <DependentUpon>Student_Outstanding_Arrears_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class_Master_Frm.resx">
+      <DependentUpon>Class_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportASDR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportASDR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSCDR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSCDR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fine_Master_Frm.resx">
+      <DependentUpon>Fine_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Group_Master_Frm.resx">
+      <DependentUpon>Group_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Deposit_Master_Frm.resx">
+      <DependentUpon>Hostel_Deposit_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Fees_Master_Frm.resx">
+      <DependentUpon>Hostel_Fees_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Maintance_Fees_Master_Frm.resx">
+      <DependentUpon>Hostel_Maintance_Fees_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KMHSS_Admin_Home_Frm.resx">
+      <DependentUpon>KMHSS_Admin_Home_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Account_Master_Frm.resx">
+      <DependentUpon>Login_Account_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Frm.resx">
+      <DependentUpon>Login_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Student_Master_Frm.resx">
+      <DependentUpon>Admin_Student_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup_Frm.resx">
+      <DependentUpon>Backup_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class_Name_List_Frm.resx">
+      <DependentUpon>Class_Name_List_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportAMCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportAMCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportCNLR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCNLR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportDBTR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportDBTR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportDOBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportDOBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportGR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportGR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportHBP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportHBP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportHBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportHBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportHFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportHFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportHSR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportHSR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOHBP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOHBP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOHBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOHBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOHFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOHFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOSBP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOSBP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOSBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOSBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOSFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOSFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOSTFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOSTFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportOVFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportOVFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportPPD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPPD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSBP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSBP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSPDR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSPDR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSTBP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSTBP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSTBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSTBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSTFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSTFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportTCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTCR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportVBP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportVBP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportVBR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportVBR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportVFR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportVFR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily_Bill_Turnover_Report_Frm.resx">
+      <DependentUpon>Daily_Bill_Turnover_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily_Overall_Bill_Report_Frm.resx">
+      <DependentUpon>Daily_Overall_Bill_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Group_Master_Report_Frm.resx">
+      <DependentUpon>Group_Master_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Fees_Master_Report_Frm.resx">
+      <DependentUpon>Hostel_Fees_Master_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Hostel_Fees_Details_Frm.resx">
+      <DependentUpon>Outstanding_Hostel_Fees_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Students_Details_Report_Frm.resx">
+      <DependentUpon>Hostel_Students_Details_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintance_Type_Master_Frm.resx">
+      <DependentUpon>Maintance_Type_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Month_Master_Frm.resx">
+      <DependentUpon>Month_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other_Fees_Master_Frm.resx">
+      <DependentUpon>Other_Fees_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Stationary_Fees_Report_Frm.resx">
+      <DependentUpon>Outstanding_Stationary_Fees_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Student_Details_Frm.resx">
+      <DependentUpon>Outstanding_Student_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Particulars_Fees_Paid_Details_Frm.resx">
+      <DependentUpon>Particulars_Fees_Paid_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other_Fees_Master_Report_Frm.resx">
+      <DependentUpon>Other_Fees_Master_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outsatanding_School_Fees_Report_Frm.resx">
+      <DependentUpon>Outsatanding_School_Fees_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Hostel_Fees_Report_Frm.resx">
+      <DependentUpon>Outstanding_Hostel_Fees_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Van_Fees_Report_Frm.resx">
+      <DependentUpon>Outstanding_Van_Fees_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Particulars_Master_Frm.resx">
+      <DependentUpon>Particulars_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Place_Master_Frm.resx">
+      <DependentUpon>Place_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Promotion_Eligible_Student_Details_Frm.resx">
+      <DependentUpon>Promotion_Eligible_Student_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Promotion_Not_Eligible_Student_Details_Frm.resx">
+      <DependentUpon>Promotion_Not_Eligible_Student_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Promotion_With_Held_Student_Details_Frm.resx">
+      <DependentUpon>Promotion_With_Held_Student_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Bill_Frm.resx">
+      <DependentUpon>Hostel_Bill_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Bill_Report_Frm.resx">
+      <DependentUpon>Hostel_Bill_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other_Hostel_Bill_Frm.resx">
+      <DependentUpon>Other_Hostel_Bill_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other_Hostel_Bill_Report_Frm.resx">
+      <DependentUpon>Other_Hostel_Bill_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other_School_Bill_Frm.resx">
+      <DependentUpon>Other_School_Bill_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other_School_Bill_Report_Frm.resx">
+      <DependentUpon>Other_School_Bill_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="School_Bill_Frm.resx">
+      <DependentUpon>School_Bill_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="School_Bill_Report_Frm.resx">
+      <DependentUpon>School_Bill_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="School_Fees_Master_Frm.resx">
+      <DependentUpon>School_Fees_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="School_Fees_Master_Report_Frm.resx">
+      <DependentUpon>School_Fees_Master_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_School_Fees_Details_Frm.resx">
+      <DependentUpon>Outstanding_School_Fees_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Section_Master_Frm.resx">
+      <DependentUpon>Section_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Home_Frm.resx">
+      <DependentUpon>Staff_Home_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Student_Promotion_Details_Frm.resx">
+      <DependentUpon>Staff_Student_Promotion_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stationary_Billing_Report_Frm.resx">
+      <DependentUpon>Stationary_Billing_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stationary_Bill_Frm.resx">
+      <DependentUpon>Stationary_Bill_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stationary_Fees_Master_Frm.resx">
+      <DependentUpon>Stationary_Fees_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stationary_Fees_Master_Report_Frm.resx">
+      <DependentUpon>Stationary_Fees_Master_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Stationary_Fees_Details_Frm.resx">
+      <DependentUpon>Outstanding_Stationary_Fees_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Admission_Class_Wise_Report_Frm.resx">
+      <DependentUpon>Student_Admission_Class_Wise_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Class_Wise_Exempted_Analysis_Details_Frm.resx">
+      <DependentUpon>Student_Class_Wise_Exempted_Analysis_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Contact_Details_Frm.resx">
+      <DependentUpon>Student_Contact_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Contact_Details_Report_Frm.resx">
+      <DependentUpon>Student_Contact_Details_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Personal_Details_Frm.resx">
+      <DependentUpon>Student_Personal_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Personal_Details_Master_Frm.resx">
+      <DependentUpon>Student_Personal_Details_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Admission_Details_Report_Frm.resx">
+      <DependentUpon>Student_Admission_Details_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Personal_Details_Report_Frm.resx">
+      <DependentUpon>Student_Personal_Details_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Promotion_Details_Frm.resx">
+      <DependentUpon>Student_Promotion_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Bill_Summary_Details_Frm.resx">
+      <DependentUpon>Student_Bill_Summary_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TC_Master_Frm.resx">
+      <DependentUpon>TC_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_TC_Issue_Details_Report_Frm.resx">
+      <DependentUpon>Student_TC_Issue_Details_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Term_Type_Master_Frm.resx">
+      <DependentUpon>Term_Type_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trip_Type_Master_Frm.resx">
+      <DependentUpon>Trip_Type_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Van_Bill_Frm.resx">
+      <DependentUpon>Van_Bill_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Van_Bill_Report_Frm.resx">
+      <DependentUpon>Van_Bill_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Van_Fees_Master_FRm.resx">
+      <DependentUpon>Van_Fees_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Van_Fees_Master_Report_Frm.resx">
+      <DependentUpon>Van_Fees_Master_Report_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Van_Fees_Details_Frm.resx">
+      <DependentUpon>Outstanding_Van_Fees_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hostel_Student_Analysis_Details_Frm.resx">
+      <DependentUpon>Hostel_Student_Analysis_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Class_Wise_Extra_Analysis_Details_Frm.resx">
+      <DependentUpon>Student_Class_Wise_Extra_Analysis_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Admission_Details_Frm.resx">
+      <DependentUpon>Student_Admission_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Class_Wise_Analysis_Details_Frm.resx">
+      <DependentUpon>Student_Class_Wise_Analysis_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Van_Number_Master_Frm.resx">
+      <DependentUpon>Van_Number_Master_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Van_Student_Analysis_Details_Frm.resx">
+      <DependentUpon>Van_Student_Analysis_Details_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Staff_Student_Promotion_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Student_Promotion_Details_Frm.Designer.cs">
+      <DependentUpon>Staff_Student_Promotion_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stationary_Billing_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stationary_Billing_Report_Frm.Designer.cs">
+      <DependentUpon>Stationary_Billing_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stationary_Bill_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stationary_Bill_Frm.Designer.cs">
+      <DependentUpon>Stationary_Bill_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stationary_Fees_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stationary_Fees_Master_Frm.Designer.cs">
+      <DependentUpon>Stationary_Fees_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stationary_Fees_Master_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stationary_Fees_Master_Report_Frm.Designer.cs">
+      <DependentUpon>Stationary_Fees_Master_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Stationary_Fees_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Stationary_Fees_Details_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Stationary_Fees_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Admission_Class_Wise_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Admission_Class_Wise_Report_Frm.Designer.cs">
+      <DependentUpon>Student_Admission_Class_Wise_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Class_Wise_Exempted_Analysis_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Class_Wise_Exempted_Analysis_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Class_Wise_Exempted_Analysis_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Contact_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Contact_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Contact_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Contact_Details_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Contact_Details_Report_Frm.Designer.cs">
+      <DependentUpon>Student_Contact_Details_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Personal_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Personal_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Personal_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Personal_Details_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Personal_Details_Master_Frm.Designer.cs">
+      <DependentUpon>Student_Personal_Details_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Admission_Details_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Admission_Details_Report_Frm.Designer.cs">
+      <DependentUpon>Student_Admission_Details_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Personal_Details_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Personal_Details_Report_Frm.Designer.cs">
+      <DependentUpon>Student_Personal_Details_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Promotion_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Promotion_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Promotion_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Bill_Summary_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Bill_Summary_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Bill_Summary_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TC_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TC_Master_Frm.Designer.cs">
+      <DependentUpon>TC_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_TC_Issue_Details_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_TC_Issue_Details_Report_Frm.Designer.cs">
+      <DependentUpon>Student_TC_Issue_Details_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Term_Type_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Term_Type_Master_Frm.Designer.cs">
+      <DependentUpon>Term_Type_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trip_Type_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trip_Type_Master_Frm.Designer.cs">
+      <DependentUpon>Trip_Type_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van_Bill_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Van_Bill_Frm.Designer.cs">
+      <DependentUpon>Van_Bill_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van_Bill_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Van_Bill_Report_Frm.Designer.cs">
+      <DependentUpon>Van_Bill_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van_Fees_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Van_Fees_Master_Frm.Designer.cs">
+      <DependentUpon>Van_Fees_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van_Fees_Master_Report_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Van_Fees_Master_Report_Frm.Designer.cs">
+      <DependentUpon>Van_Fees_Master_Report_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Van_Fees_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outstanding_Van_Fees_Details_Frm.Designer.cs">
+      <DependentUpon>Outstanding_Van_Fees_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hostel_Student_Analysis_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hostel_Student_Analysis_Details_Frm.Designer.cs">
+      <DependentUpon>Hostel_Student_Analysis_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Class_Wise_Extra_Analysis_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Class_Wise_Extra_Analysis_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Class_Wise_Extra_Analysis_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Admission_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Admission_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Admission_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Class_Wise_Analysis_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Class_Wise_Analysis_Details_Frm.Designer.cs">
+      <DependentUpon>Student_Class_Wise_Analysis_Details_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van_Number_Master_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Van_Number_Master_Frm.Designer.cs">
+      <DependentUpon>Van_Number_Master_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Van_Student_Analysis_Details_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Van_Student_Analysis_Details_Frm.Designer.cs">
+      <DependentUpon>Van_Student_Analysis_Details_Frm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\HM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
