@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/Favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css">
+  </link>
+  <!-- Main Page CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- Main Page CSS -->
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Global Pension Associates</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+  <div id="root">
+
+  </div>
+
+  <script type="text/javascript">
+    function Chart_Script() {
+      FusionCharts.ready(function () {
+        var revenueChart = new FusionCharts({
+          type: 'column2d',
+          renderAt: 'chart-container',
+          width: '100%',
+          height: '450',
+          dataFormat: 'json',
+          dataSource: {
+            "chart": {
+              "caption": "Registered Company Details",
+              "subCaption": "Month wise",
+              "xAxisName": "Month",
+              "yAxisName": "No.of Companies",
+              "paletteColors": "#0075c2",
+              "bgColor": "#ffffff",
+              "borderAlpha": "20",
+              "canvasBorderAlpha": "0",
+              "usePlotGradientColor": "0",
+              "plotBorderAlpha": "10",
+              "placevaluesInside": "1",
+              "rotatevalues": "1",
+              "valueFontColor": "#ffffff",
+              "showXAxisLine": "1",
+              "xAxisLineColor": "#999999",
+              "divlineColor": "#999999",
+              "divLineIsDashed": "1",
+              "showAlternateHGridColor": "0",
+              "subcaptionFontBold": "0",
+              "subcaptionFontSize": "14"
+            },
+            "data": [
+              {
+                "label": "Jan",
+                "value": "42"
+              },
+              {
+                "label": "Feb",
+                "value": "81"
+              },
+              {
+                "label": "Mar",
+                "value": "72"
+              },
+              {
+                "label": "Apr",
+                "value": "55"
+              },
+              {
+                "label": "May",
+                "value": "91"
+              },
+              {
+                "label": "Jun",
+                "value": "51"
+              },
+              {
+                "label": "Jul",
+                "value": "68"
+              },
+              {
+                "label": "Aug",
+                "value": "62"
+              },
+              {
+                "label": "Sep",
+                "value": "61"
+              },
+              {
+                "label": "Oct",
+                "value": "49"
+              },
+              {
+                "label": "Nov",
+                "value": "90"
+              },
+              {
+                "label": "Dec",
+                "value": "73"
+              }
+            ],
+
+          }
+        }).render();
+      });
+    }
+
+    // PIE CHART
+
+    function Chart_pie() {
+      FusionCharts.ready(function () {
+        var revenueChart = new FusionCharts({
+          type: 'doughnut2d',
+          renderAt: 'chart-pie',
+          width: '100%',
+          height: '450',
+          dataFormat: 'json',
+          dataSource: {
+            "chart": {
+              "caption": "Pension Application Details",
+              "subCaption": "Last year",
+              "numberPrefix": "$",
+              "paletteColors": "#0075c2,#1aaf5d,#dd3636,#f45b00,#8e0000",
+              "bgColor": "#ffffff",
+              "showBorder": "0",
+              "use3DLighting": "0",
+              "showShadow": "0",
+              "enableSmartLabels": "0",
+              "startingAngle": "310",
+              "showLabels": "0",
+              "showPercentValues": "1",
+              "showLegend": "1",
+              "legendShadow": "0",
+              "legendBorderAlpha": "0",
+              "centerLabelBold": "1",
+              "showTooltip": "0",
+              "decimals": "0",
+              "captionFontSize": "14",
+              "subcaptionFontSize": "14",
+              "subcaptionFontBold": "0"
+            },
+            "data": [
+              {
+                "label": "Apply",
+                "value": "28504"
+              },
+              {
+                "label": "Approval",
+                "value": "14633"
+              },
+              {
+                "label": "Reject",
+                "value": "10507"
+              },
+              {
+                "label": "Forecast",
+                "value": "4910"
+              }
+            ]
+          }
+        }).render();
+      });
+    }
+
+    // COMPARISON CHART
+
+    function Chart_comparison() {
+      FusionCharts.ready(function () {
+        var salesChart = new FusionCharts({
+          type: 'MSColumn2D',
+          renderAt: 'chart-comparison',
+          width: '100%',
+          height: '450',
+          dataFormat: 'json',
+          dataSource: {
+            "chart": {
+              "caption": "Pension Applied, Approved & Rejected",
+              "palettecolors": "0075c2,03a859,e92626",
+              "subcaption": "Pension Details",
+              "yaxismaxvalue": "250",
+              "decimals": "0",
+              "placevaluesinside": "1",
+              "rotatevalues": "0",
+              "divlinealpha": "50",
+              "plotfillalpha": "80",
+              "drawCrossLine": "1",
+              "crossLineAlpha": "100",
+              "theme": "zune"
+            },
+            "categories": [{
+              "category": [{
+                "label": "2012"
+              },
+              {
+                "label": "2013"
+              },
+              {
+                "label": "2014"
+              },
+              {
+                "label": "2015"
+              },
+              {
+                "label": "2016"
+              }
+              ]
+            }],
+            "dataset": [{
+              "seriesname": "Applied",
+              "data": [{
+                "value": "125.04"
+              },
+              {
+                "value": "150.26"
+              },
+              {
+                "value": "169.22"
+              },
+              {
+                "value": "231.22"
+              },
+              {
+                "value": "285.67"
+              }
+              ]
+            },
+            {
+              "seriesname": "Approved",
+              "data": [{
+                "value": "42.63"
+              },
+              {
+                "value": "35.16"
+              },
+              {
+                "value": "26.38"
+              },
+              {
+                "value": "20.38"
+              },
+              {
+                "value": "14.23"
+              }
+              ]
+            },
+            {
+              "seriesname": "Rejected",
+              "data": [{
+                "value": "58.31"
+              },
+              {
+                "value": "71.04"
+              },
+              {
+                "value": "67.99"
+              },
+              {
+                "value": "54.85"
+              },
+              {
+                "value": "60.53"
+              }
+              ]
+            }
+            ]
+          }
+        })
+          .render();
+      });
+    }
+
+    // Again Comparison Chart
+
+    function Chart_againcomparison() {
+      FusionCharts.ready(function () {
+        var salesChart = new FusionCharts({
+          type: 'msline',
+          renderAt: 'chart-compar',
+          width: '100%',
+          height: '450',
+          dataFormat: 'json',
+          dataSource: {
+            "chart": {
+              "caption": "Pension Application Comparison from 2011 to 2015",
+              "subcaption": "Quarterly wise",
+              "linethickness": "2",
+              "showvalues": "0",
+              "formatnumberscale": "1",
+              "labeldisplay": "ROTATE",
+              "slantlabels": "1",
+              "divLineAlpha": "40",
+              "anchoralpha": "0",
+              "animation": "1",
+              "legendborderalpha": "20",
+              "drawCrossLine": "1",
+              "crossLineColor": "#0d0d0d",
+              "crossLineAlpha": "100",
+              "tooltipGrayOutColor": "#80bfff",
+              "theme": "zune"
+            },
+            "categories": [{
+              "category": [{
+                "label": "Q1'12"
+              }, {
+                "label": "Q2'12"
+              }, {
+                "label": "Q3'12"
+              }, {
+                "label": "Q4'12"
+              }, {
+                "label": "Q1'13"
+              }, {
+                "label": "Q2'13"
+              }, {
+                "label": "Q3'13"
+              }, {
+                "label": "Q4'13"
+              }, {
+                "label": "Q1'14"
+              }, {
+                "label": "Q2'14"
+              }, {
+                "label": "Q3'14"
+              }, {
+                "label": "Q4'14"
+              }, {
+                "label": "Q1'15"
+              }, {
+                "label": "Q2'15"
+              }, {
+                "label": "Q3'15"
+              }, {
+                "label": "Q4'15"
+              }, {
+                "label": "Q1'16"
+              }, {
+                "label": "Q2'16"
+              }, {
+                "label": "Q3'16"
+              }, {
+                "label": "Q4'16"
+              }]
+            }],
+            "dataset": [{
+              "seriesname": "Applied",
+              "data": [{
+                "value": "716"
+              }, {
+                "value": "771"
+              }, {
+                "value": "687"
+              }, {
+                "value": "698"
+              }, {
+                "value": "826"
+              }, {
+                "value": "938"
+              }, {
+                "value": "892"
+              }, {
+                "value": "904"
+              }, {
+                "value": "979"
+              }, {
+                "value": "600"
+              }, {
+                "value": "545"
+              }, {
+                "value": "530"
+              }, {
+                "value": "480"
+              }, {
+                "value": "680"
+              }, {
+                "value": "520"
+              }, {
+                "value": "320"
+              }, {
+                "value": "315"
+              }, {
+                "value": "299"
+              }, {
+                "value": "280"
+              }, {
+                "value": "260"
+              }]
+            }, {
+              "seriesname": "Approved",
+              "data": [{
+                "value": "117"
+              }, {
+                "value": "122"
+              }, {
+                "value": "107"
+              }, {
+                "value": "115"
+              }, {
+                "value": "105"
+              }, {
+                "value": "111"
+              }, {
+                "value": "130"
+              }, {
+                "value": "140"
+              }, {
+                "value": "145"
+              }, {
+                "value": "160"
+              }, {
+                "value": "200"
+              }, {
+                "value": "210"
+              }, {
+                "value": "320"
+              }, {
+                "value": "480"
+              }, {
+                "value": "520"
+              }, {
+                "value": "560"
+              }, {
+                "value": "540"
+              }, {
+                "value": "680"
+              }, {
+                "value": "640"
+              }, {
+                "value": "720"
+              }]
+            }, {
+              "seriesname": "Rejected",
+              "data": [{
+                "value": "134"
+              }, {
+                "value": "160"
+              }, {
+                "value": "168"
+              }, {
+                "value": "196"
+              }, {
+                "value": "173"
+              }, {
+                "value": "354"
+              }, {
+                "value": "331"
+              }, {
+                "value": "289"
+              }, {
+                "value": "246"
+              }, {
+                "value": "434"
+              }, {
+                "value": "383"
+              }, {
+                "value": "319"
+              }, {
+                "value": "303"
+              }, {
+                "value": "502"
+              }, {
+                "value": "430"
+              }, {
+                "value": "353"
+              }, {
+                "value": "381"
+              }, {
+                "value": "601"
+              }, {
+                "value": "480"
+              }, {
+                "value": "460"
+              }]
+            }]
+          }
+        })
+          .render();
+      });
+
+    }
+  </script>
+
+  <script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+  <script src="https://static.fusioncharts.com/code/latest/fusioncharts.charts.js"></script>
+  <script src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.zune.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADGT_Xy9rtzFPhH-m0VG5cWL-hi0sK5jA&libraries=places"></script>
+
+  <!-- Multiple language -->
+</body>
+
+</html>
