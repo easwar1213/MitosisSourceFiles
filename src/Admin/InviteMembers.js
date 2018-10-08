@@ -58,13 +58,15 @@ const style = {
 class InviteMembers extends Component {
 
     constructor() {
-        super();        
+        super();
         this.handleLoadCompany(this);
         this.state = { show: false }
         this.state = {
             value: null,
             result1: [],
-            Title: "",           
+            text: "Invitation Link has been sent Successfully !",
+            title: "Success",
+            Title: "",
             EmailID: "",
             countrystate: null,
             statevalue: null,
@@ -77,7 +79,7 @@ class InviteMembers extends Component {
             isValidMobile: false,
             code: '',
             showValidMsg: false,
-            value: null,            
+            value: null,
             isValidCountry: false,
             EmailState: "",
             isValidFlag: "",
@@ -100,12 +102,19 @@ class InviteMembers extends Component {
         this.setState({ citystate: CitySuffix });
     };
     handleChangeEmail = (e) => {
-        this.setState({ EmailState: e.target.value });    };
+
+        this.setState({
+            EmailState: e.target.value,
+            showValidEmailMsg: false
+        });
+
+    };
 
     handleLoadCompany(event) {
         let LoadCountryAPIUrl = "https://yfsrlo44q0.execute-api.us-west-2.amazonaws.com/Dev/GPA_LoadCommonDatas_Lambda";
         let JSONData = JSON.stringify(
-            { QueryName: "InviteMembersClientCompanies" }
+            // { QueryName: "InviteMembersClientCompanies" }
+            { QueryName: "InviteMembersClientCompaniess" }
         );
         let AxiosHeaderConfig = {
             "Content-Type": "application/json",
@@ -126,13 +135,14 @@ class InviteMembers extends Component {
         }).catch((err) => {
             console.log(err);
         })
-    }    
+    }
 
-    handleReadClientCompany(event) {         
-        this.setState({ validEmailForm:true }, ()=>{ var isValid = this.handleValidateForm(this); 
-            if (isValid) {           
+    handleReadClientCompany(event) {
+        this.setState({ validEmailForm: true }, () => {
+            var isValid = this.handleValidateForm(this);
+            if (isValid) {
                 var actualEmail = this.state.EmailState;
-                var thisObj = this;           
+                var thisObj = this;
                 var CallAPIData = function (api_url, api_inputdata) {
                     var promise = new Promise(function (resolve, reject) {
                         axios({
@@ -140,15 +150,15 @@ class InviteMembers extends Component {
                             url: api_url,
                             data: api_inputdata,
                             //headers: AxiosHeaderConfig,
-                        }).then(({ data }) => {                            
-                            resolve(data);                        
+                        }).then(({ data }) => {
+                            resolve(data);
                         }).catch((error) => {
                             reject(error);
                         })
                     })
                     return promise;
                 }
-    
+
                 let ReadCliCompanyAPIUrl = "https://hxka7dtm3m.execute-api.us-west-2.amazonaws.com/dev/invitemember";
                 var JSONDataSendMail = JSON.stringify({
                     EmailList: this.state.EmailState != "" ? this.state.EmailState : result1
@@ -165,57 +175,84 @@ class InviteMembers extends Component {
                         QueryName: "InviteStatus",
                         Email: this.state.EmailState,
                     }
-                );               
+                );
                 let ReadValidCompAPIUrl = "https://cx1y9bpqe2.execute-api.us-west-2.amazonaws.com/Dev/GPA_ReadClientCompanyDatas_Lambda";
                 var CompJSONData = JSON.stringify({
-                    QueryName:"IM",
-                    CompanyID: thisObj.state.statevalue,
-                    UserID:thisObj.state.EmailState
+                    QueryName: "IM",
+                    CompanyCode: thisObj.state.statevalue,
+                    UserID: thisObj.state.EmailState
                 });
+
                 CallAPIData(ReadValidCompAPIUrl, CompJSONData)
-                .then((data) => {
-                    if(data.length>0)
-                {                    
-                var isValid = this.handleValidateForm(this);            
-                if(isValid){                   
-                CallAPIData(LoadCountryAPIUrl, JSONData)
-                    .then((data) => {                        
-                        if (data[0].InviteStatus == "C") {                        
-                            this.setState({ InvnLinkStatus: "Confirmed" });
-                            this.setState({ validEmailForm: false }); 
-                            this.setState({ showValidEmailMsg: false });
-                        }                                           
-                        var isValid = this.handleValidateForm(this);
-                        if(isValid){                            
-                        CallAPIData(ReadCliCompanyAPIUrl, JSONDataSendMail)
-                            .then(() => {                            
-                                thisObj.setState({ InvnLinkMsg: true });
-                                thisObj.setState({ countrystate: "" });
-                                thisObj.setState({ statevalue: "" });
-                                thisObj.setState({ EmailState: "" });
-                            }).catch(() => {
-                                thisObj.setState({ InvnLinkMsg: true });
-                                thisObj.setState({ countrystate: "" });
-                                thisObj.setState({ statevalue: "" });
-                                thisObj.setState({ EmailState: "" });
-                            })
+                    .then((data) => {
+                        if (data.length > 0) {
+
+                            var isValid = this.handleValidateForm(this);
+                            if (data[0].IsActive === "N") {
+                                this.setState({
+                                    InvnLinkMsg: true,
+                                    title: "Warning",
+                                    text: "Email entered is in-Active State !",
+                                    showValidEmailMsg: "",
+
+                                    // title: "Success"
+                                });
+
+                                isValid = false;
+                            }
+                            if (isValid) {
+                                console.log("isvalidafter1");
+                                CallAPIData(LoadCountryAPIUrl, JSONData)
+                                    .then((data) => {
+                                        if (data[0].InviteStatus == "C") {
+                                            this.setState({ InvnLinkStatus: "Confirmed" });
+                                            this.setState({ validEmailForm: false });
+                                            this.setState({ showValidEmailMsg: false });
+                                        }
+                                        console.log("isvalidafter2");
+                                        var isValid = this.handleValidateForm(this);
+                                        if (isValid) {
+                                            CallAPIData(ReadCliCompanyAPIUrl, JSONDataSendMail)
+                                                .then(() => {
+                                                    console.log("isvalidafter1");
+                                                    thisObj.setState({
+                                                        InvnLinkMsg: true,
+                                                        title: "Warning",
+                                                        text: "Invitation Link has been Sent Already",
+                                                    });
+                                                    thisObj.setState({ countrystate: "" });
+                                                    thisObj.setState({ statevalue: "" });
+                                                    thisObj.setState({ EmailState: "" });
+                                                }).catch((error) => {
+                                                    console.log("Error." + error)
+                                                    thisObj.setState({
+                                                        InvnLinkMsg: true,
+                                                        title: "Warning",
+                                                        text: "Invitation Link has been Sent Already",
+                                                    });
+                                                    thisObj.setState({ countrystate: "" });
+                                                    thisObj.setState({ statevalue: "" });
+                                                    thisObj.setState({ EmailState: "" });
+                                                })
+                                        }
+                                    }).catch((error) => {
+                                        console.log("error", error);
+                                    })
+                            }
                         }
-                    }).catch((error) => {    
+                        else {
+                            console.log("Error");
+                            thisObj.setState({ showValidEmailMsg: true });
+                        }
+                    }).catch(() => {
+
                     })
-                }
             }
-            else{            
-                thisObj.setState({showValidEmailMsg:true});            
-            }  
-            }).catch(() => {
-                    
-            })              
-            }        
         });
     }
-   
 
-    handleValidateForm(event) {        
+
+    handleValidateForm(event) {
         let validForm = false;
         var validCForm = false;
         var validSForm = false;
@@ -264,16 +301,16 @@ class InviteMembers extends Component {
                 validForm = false;
             }
         }
-        else {        
+        else {
             if (validCForm && validSForm && validEForm && this.state.validEmailForm) {
                 validForm = true;
             }
             else {
                 validForm = false;
             }
-        }        
+        }
         return validForm;
-        
+
     }
 
     handleNavDashboard() {
@@ -304,7 +341,7 @@ class InviteMembers extends Component {
                 result1.push(lines[i]);
             }
             /* Update state */
-        };        
+        };
         reader.readAsBinaryString(files[0]);
         this.setState({ Fileinput: false, filename: files[0].name, isValidFile: false });
     }
@@ -329,7 +366,7 @@ class InviteMembers extends Component {
         const { statevalue, countrystate, citystate } = this.state;
         return (
             <div className="main-wrapper">
-                <div className="HeaderTile">                   
+                <div className="HeaderTile">
                     <Flex className="show-grid" layout="row">
                         <Flex flex="none">
                             <div className="TitleIcon">
@@ -341,13 +378,13 @@ class InviteMembers extends Component {
                                 <h5><span className="BreadCrumbsClass"><BackIcon /></span>&nbsp;&nbsp;<b><span onClick={this.handleNavDashboard.bind(this)} className="ActiveClass">Home / Dashboard</span></b></h5>
                             </div>
                         </Flex>
-                    </Flex>                  
+                    </Flex>
                 </div>
-              
+
                 <Paper zDepth={1} className="CommonDiv">
-                    <h2 className="legendtitle">Invite Members</h2>   
-                        <div className="fieldstyle">
-                        <Col md={12} xs={12} className="ClientReg">                          
+                    <h2 className="legendtitle">Invite Members</h2>
+                    <div className="fieldstyle">
+                        <Col md={12} xs={12} className="ClientReg">
                             <form onSubmit={this.handleSubmit.bind(this)}>
                                 <Col xs={12} md={12}>
                                     <Col xs={12} md={12} className="input-fileds">
@@ -384,9 +421,9 @@ class InviteMembers extends Component {
                                                 type="email"
                                                 value={this.state.EmailState}
                                                 onChange={this.handleChangeEmail.bind(this)}
-                                            />                                                
+                                            />
                                             <span className="validationmsg">{this.state.isValidEmailState ? "Please Enter Your Email" : ""}</span>
-                                            <span className="validationmsg">{this.state.showValidEmailMsg ? "Company Information Not Match with Your Information" : ""}</span>                                                                
+                                            <span className="validationmsg">{this.state.showValidEmailMsg ? "Company Information Not Match with Your Information" : ""}</span>
                                             <span className="validationmsg">{this.state.validEmailForm == false ? "Invitation Link has been already Sent to this Customer." : ""}</span>
                                             {/* <span className="validationmsg">{(this.state.validEmailForm && this.state.showValidEmailMsg) ? "Company Information Not Match with Your Information" : ""}</span>
                                             <span className="validationmsg">{(this.state.validEmailForm && this.state.showValidEmailMsg && this.state.isValidEmailState) ? "Company Information Not Match with Your Information" : ""}</span> */}
@@ -413,25 +450,26 @@ class InviteMembers extends Component {
                                     {/* <span className="validationSuccessmsg">{this.state.InvnLinkMsg ? "Invitation Link has been sent Successfully" : null}</span> */}
                                     <SweetAlert
                                         show={this.state.InvnLinkMsg}
-                                        title="Success"
-                                        text="Invitation Link has been sent Successfully !"
+                                        title={this.state.title}
+                                        text={this.state.text}
                                         onConfirm={() => this.setState({ InvnLinkMsg: false })}
                                     />
                                 </Col>
-                                </form>
-                            </Col>
-                        </div> 
-                    
-                </Paper>                
+                            </form>
+                        </Col>
+                    </div>
+
+                </Paper>
             </div>
 
         );
-    }  
+    }
 
     handleSubmit(event) {
         event.preventDefault();
         var IsvalidUrl;
         var thisObj = this;
+
         this.state.countrystate == 1 ? IsvalidUrl = this.handleReadClientCompany(this) : null;
         var isValid = this.handleValidateForm(this);
         if (isValid) {
