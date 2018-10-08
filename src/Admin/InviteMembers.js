@@ -217,8 +217,8 @@ class InviteMembers extends Component {
                                                     console.log("isvalidafter1");
                                                     thisObj.setState({
                                                         InvnLinkMsg: true,
-                                                        title: "Warning",
-                                                        text: "Invitation Link has been Sent Already",
+                                                        title: "Success",
+                                                        text: "Invitation Link has been sent Successfully",
                                                     });
                                                     thisObj.setState({ countrystate: "" });
                                                     thisObj.setState({ statevalue: "" });
